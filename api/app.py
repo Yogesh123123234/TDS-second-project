@@ -49,6 +49,9 @@ def process_file():
     except Exception as e:
         print(e,"this is the error")
         return jsonify({"error": str(e)}), 500
+@app.route("/api/", methods=["POST"])
+def process_file_alias():
+    return process_file()
 
 
 @app.route('/redeploy', methods=['GET'])
